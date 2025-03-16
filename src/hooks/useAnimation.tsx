@@ -1,0 +1,78 @@
+
+import { useEffect, useRef, useState } from 'react';
+
+interface AnimationOptions {
+  threshold?: number;
+  rootMargin?: string;
+  triggerOnce?: boolean;
+}
+
+export function useAnimation(options: AnimationOptions = {}) {
+  const { 
+    threshold = 0.1, 
+    rootMargin = '0px', 
+    triggerOnce = true 
+  } = options;
+  
+  const ref = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          if (triggerOnce && ref.current) {
+            observer.unobserve(ref.current);
+          }
+        } else if (!triggerOnce) {
+          setIsVisible(false);
+        }
+      },
+      { threshold, rootMargin }
+    );
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [threshold, rootMargin, triggerOnce]);
+
+  return { ref, isVisible };
+}
+
+export function useAnimationGroup(
+  count: number,
+  options: AnimationOptions = {},
+  delayIncrement: number = 100
+) {
+  const { ref, isVisible } = useAnimation(options);
+  
+  const getDelay = (index: number) => {
+    return isVisible ? `${index * delayIncrement}ms` : '0ms';
+  };
+
+  return {
+    ref,
+    isVisible,
+    getDelay,
+    getProps: (index: number) => ({
+      style: {
+        opacity: 0,
+        transform: 'translateY(20px)',
+        transition: 'opacity 0.5s ease, transform 0.5s ease',
+        transitionDelay: getDelay(index),
+        ...(isVisible && {
+          opacity: 1,
+          transform: 'translateY(0)',
+        }),
+      },
+    }),
+  };
+}
