@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
             <br /> Your Personal Calendar Genius
           </h1>
           
-          <p className={cn("text-xl text-gray-600 mb-8 max-w-lg", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-300" : "opacity-0 translate-y-8")}>Add Brooklyn to WhatsApp and never worry about overlooking meetings again. Share your meeting details, and Brooklyn handles the rest.Add Brooklyn on WhatsApp and never miss a meeting again. Share your meeting details, and Brooklyn will handle the rest.</p>
+          <p className={cn("text-xl text-gray-600 mb-8 max-w-lg", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-300" : "opacity-0 translate-y-8")}>Add Brooklyn on WhatsApp and never miss a meeting again. Share your meeting details, and Brooklyn will handle the rest.</p>
           
           <div className={cn("flex flex-col sm:flex-row gap-4 mb-10", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-400" : "opacity-0 translate-y-8")}>
             <Link to="/login">
