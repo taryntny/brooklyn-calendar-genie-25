@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import AnimatedText from '@/components/ui/AnimatedText';
 import { useAnimation } from '@/hooks/useAnimation';
 import { cn } from '@/lib/utils';
+
 export const Hero: React.FC = () => {
   const {
     ref,
@@ -13,10 +13,8 @@ export const Hero: React.FC = () => {
     triggerOnce: true
   });
   return <section ref={ref as React.RefObject<HTMLDivElement>} className="min-h-screen flex items-center relative overflow-hidden pt-20 pb-16 px-6">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-brooklyn-50/30 to-white -z-10" />
       
-      {/* Decorative elements */}
       <div className="absolute top-1/4 right-1/6 w-64 h-64 rounded-full bg-brooklyn-200/20 blur-3xl -z-10" />
       <div className="absolute bottom-1/3 left-1/6 w-72 h-72 rounded-full bg-blue-100/30 blur-3xl -z-10" />
       
@@ -30,7 +28,8 @@ export const Hero: React.FC = () => {
           
           <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight text-gray-900 mb-6", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-200" : "opacity-0 translate-y-8")}>
             Hire Brooklyn, 
-            <br /> Your Personal AI Secretary
+            <br /> Your Personal 
+            <br /> AI Secretary
           </h1>
           
           <p className={cn("text-xl text-gray-600 mb-8 max-w-lg", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-300" : "opacity-0 translate-y-8")}>Add Brooklyn on WhatsApp and never miss a meeting again. Share your meeting details, and Brooklyn will handle the rest.</p>
@@ -57,15 +56,11 @@ export const Hero: React.FC = () => {
         
         <div className={cn("flex items-center justify-center relative", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-400" : "opacity-0 translate-y-8")}>
           <div className="relative max-w-sm w-full aspect-[4/5] bg-white rounded-3xl shadow-2xl overflow-hidden">
-            {/* Phone frame */}
             <div className="absolute inset-0 border-8 border-gray-800 rounded-3xl pointer-events-none z-10">
-              {/* Notch */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-6 bg-gray-800 rounded-b-xl"></div>
             </div>
             
-            {/* WhatsApp chat mockup */}
             <div className="absolute inset-0 flex flex-col">
-              {/* Chat header */}
               <div className="bg-brooklyn-600 px-4 py-3 text-white flex items-center">
                 <div className="w-8 h-8 rounded-full bg-white/20 mr-3"></div>
                 <div>
@@ -74,10 +69,8 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
               
-              {/* Chat content */}
               <div className="flex-grow bg-gradient-to-b from-gray-50 to-gray-100 p-3 overflow-hidden">
                 <div className="flex flex-col space-y-3">
-                  {/* Message bubbles */}
                   <div className="bg-white rounded-lg rounded-tl-none p-3 max-w-[80%] shadow-sm self-start animate-slide-in-right" style={{
                   animationDelay: '600ms'
                 }}>
@@ -116,7 +109,6 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
               
-              {/* Chat input */}
               <div className="bg-white px-3 py-2 flex items-center">
                 <div className="flex-grow bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-400">
                   Type a message...
@@ -125,7 +117,6 @@ export const Hero: React.FC = () => {
             </div>
           </div>
           
-          {/* Decorative elements */}
           <div className="absolute -top-10 -right-10 w-20 h-20 bg-brooklyn-200 rounded-full opacity-30 animate-float"></div>
           <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-100 rounded-full opacity-40 animate-float" style={{
           animationDelay: '1s'
@@ -135,4 +126,3 @@ export const Hero: React.FC = () => {
     </section>;
 };
 export default Hero;
-
