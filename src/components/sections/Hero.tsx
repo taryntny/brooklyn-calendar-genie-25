@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -28,8 +29,8 @@ export const Hero: React.FC = () => {
           </div>
           
           <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight text-gray-900 mb-6", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-200" : "opacity-0 translate-y-8")}>
-            Meet <span className="text-gradient">Brooklyn</span>, 
-            <br /> Your Personal Calendar Genius
+            Hire Brooklyn, 
+            <br /> Your Personal AI Secretary
           </h1>
           
           <p className={cn("text-xl text-gray-600 mb-8 max-w-lg", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-300" : "opacity-0 translate-y-8")}>Add Brooklyn on WhatsApp and never miss a meeting again. Share your meeting details, and Brooklyn will handle the rest.</p>
@@ -134,3 +135,4 @@ export const Hero: React.FC = () => {
     </section>;
 };
 export default Hero;
+
