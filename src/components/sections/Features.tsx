@@ -1,4 +1,3 @@
-
 import React from 'react';
 import FeatureCard from '@/components/ui/FeatureCard';
 import { useAnimation } from '@/hooks/useAnimation';
@@ -41,7 +40,7 @@ export const Features: React.FC = () => {
     {
       icon: <RefreshCw className="w-6 h-6" />,
       title: "Quick Setup",
-      description: "Get up and running in just 5 minutes with an intuitive setup process that connects to your favorite calendar apps."
+      description: "Get up and running in just 2 steps."
     },
     {
       icon: <Clock4 className="w-6 h-6" />,
