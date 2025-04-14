@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AnimatedText from '@/components/ui/AnimatedText';
 import { useAnimation } from '@/hooks/useAnimation';
 import { cn } from '@/lib/utils';
+
 export const Hero: React.FC = () => {
   const {
     ref,
@@ -11,6 +12,7 @@ export const Hero: React.FC = () => {
   } = useAnimation({
     triggerOnce: true
   });
+
   return <section ref={ref as React.RefObject<HTMLDivElement>} className="min-h-screen flex items-center relative overflow-hidden pt-20 pb-16 px-6">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-brooklyn-50/30 to-white -z-10" />
@@ -29,7 +31,7 @@ export const Hero: React.FC = () => {
           
           <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight text-gray-900 mb-6", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-200" : "opacity-0 translate-y-8")}>
             Meet <span className="text-gradient">Brooklyn</span>, 
-            <br /> Your Personal Calendar Genius
+            <br /> Your Personal Calendar Assistant
           </h1>
           
           <p className={cn("text-xl text-gray-600 mb-8 max-w-lg", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-300" : "opacity-0 translate-y-8")}>Add Brooklyn on WhatsApp and never miss a meeting again. Share your meeting details, and Brooklyn will handle the rest.</p>
@@ -133,4 +135,5 @@ export const Hero: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Hero;
