@@ -40,7 +40,7 @@ export const Features: React.FC = () => {
     {
       icon: <RefreshCw className="w-6 h-6" />,
       title: "Quick Setup",
-      description: "Get up and running in just 2 steps."
+      description: "Get up and running in just 2 steps with an intuitive setup process that connects to your favorite calendar apps."
     },
     {
       icon: <Clock4 className="w-6 h-6" />,
