@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import AnimatedText from '@/components/ui/AnimatedText';
 import { useAnimation } from '@/hooks/useAnimation';
 import { cn } from '@/lib/utils';
-
 export const Hero: React.FC = () => {
   const {
     ref,
@@ -50,7 +49,7 @@ export const Hero: React.FC = () => {
           <div className={cn("text-sm text-gray-500", isVisible ? "opacity-100 translate-y-0 transition-all duration-700 delay-500" : "opacity-0 translate-y-8")}>
             <p>✓ 24/7 online</p>
             <p>✓ Cancel anytime</p>
-            <p>✓ Setup in just 5 minutes</p>
+            <p>✓ Setup in just 2 steps</p>
           </div>
         </div>
         
